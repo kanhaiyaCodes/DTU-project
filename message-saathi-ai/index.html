@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b2d">
+  <meta name="description" content="Message Saathi helps you understand messages, translate them into simple Hindi, hear them aloud, and spot suspicious requests.">
+  <title>Message Saathi — Understand every message</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Message Saathi home">
+        <span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 11.5h24M8 20h15M8 28.5h19" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><circle cx="29" cy="20" r="5" fill="#9ee7c4" stroke="#101b2d" stroke-width="2"/></svg></span>
+        <span>message<span class="brand-light">saathi</span><small>YOUR EVERYDAY AI GUIDE</small></span>
+      </a>
+      <div class="nav-label">WORKSPACE</div>
+      <button class="nav-item active" data-scroll="analyzer"><span class="nav-icon">✳</span> Message helper <span class="nav-count">NEW</span></button>
+      <button class="nav-item" data-scroll="how-it-works"><span class="nav-icon">◷</span> How it works</button>
+      <div class="sidebar-bottom">
+        <div class="privacy-card"><span class="privacy-icon">♧</span><strong>Your messages, your control</strong><p>We don't save messages in this demo. Avoid entering passwords, OTPs, or private account details.</p></div>
+        <div class="profile-row"><div class="avatar">MS</div><div><strong>Saathi Assistant</strong><small>Here to help you understand</small></div><span class="online-dot"></span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="mobile-brand"><span class="brand-mark small-mark">✳</span> message<span class="brand-light">saathi</span></div>
+        <div class="breadcrumb">Workspace <span>/</span> <strong>Message helper</strong></div>
+        <div class="top-actions"><span class="status-pill"><i></i> AI assistant</span><button class="icon-button" id="settingsBtn" aria-label="AI settings" title="AI settings">⚙</button></div>
+      </header>
+
+      <section class="hero" id="analyzer">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="sparkle">✳</span> CLARITY, IN YOUR LANGUAGE</div>
+          <h1>Every message.<br><span>Made understandable.</span></h1>
+          <p>Paste a message. Get the meaning in simple Hindi, hear it aloud, and understand what to do next — without the guesswork.</p>
+          <div class="hero-points"><span><b>✓</b> Simple explanations</span><span><b>✓</b> Safety signals</span><span><b>✓</b> Voice-friendly</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-bubble bubble-top"><span>अ</span><i>English → Hindi</i></div>
+          <div class="art-card"><div class="art-card-top"><span class="art-dot"></span><span class="art-dot"></span><span class="art-dot"></span><span class="art-mini-label">MESSAGE SUMMARY</span></div><div class="art-lines"><i></i><i></i><i></i></div><div class="art-hindi">अब आसानी से समझें।</div><div class="art-chip">✦ Clear next steps</div></div>
+          <div class="art-bubble bubble-bottom"><span>◖</span><i>Listen in Hindi</i></div>
+          <div class="art-star star-one">✳</div><div class="art-star star-two">✦</div>
+        </div>
+      </section>
+
+      <section class="workspace-grid">
+        <div class="panel input-panel">
+          <div class="panel-heading"><div><span class="step-number">01</span><div><h2>Your message</h2><p>What would you like help understanding?</p></div></div><span class="optional-label">PRIVATE BY DESIGN</span></div>
+          <div class="textarea-wrap"><label for="messageInput" class="sr-only">Paste message here</label><textarea id="messageInput" maxlength="5000" placeholder="Paste an SMS, email, or message here…
+
+Example: Your electricity bill is due on 28 October. Please pay before the due date to avoid late fees."></textarea><div class="textarea-footer"><span id="charCount">0 / 5000</span><button class="text-button" id="clearBtn">Clear text <span>↗</span></button></div></div>
+          <div class="sample-row"><span>TRY AN EXAMPLE</span><button class="sample-chip" data-sample="bill">Electricity bill</button><button class="sample-chip" data-sample="bank">Bank alert</button><button class="sample-chip" data-sample="scam">Suspicious message</button></div>
+          <div class="input-bottom"><div class="language-select"><span class="language-icon">文</span><label for="languageSelect">Explain in</label><select id="languageSelect"><option value="Hindi">Hindi</option><option value="Hinglish">Hinglish</option><option value="English">Simple English</option></select><span class="select-chevron">⌄</span></div><button class="primary-button" id="analyzeBtn"><span>✳</span> Understand message <span class="button-arrow">→</span></button></div>
+          <p class="inline-error" id="inlineError" role="alert"></p>
+        </div>
+
+        <aside class="side-column">
+          <div class="side-note"><div class="note-icon">✦</div><div><strong>Not sure what it means?</strong><p>Saathi breaks difficult wording into clear, practical steps you can follow.</p></div></div>
+          <div class="trust-panel"><div class="trust-heading"><span class="shield-icon">♢</span><div><h3>Safety comes first</h3><p>Stay alert to these common warning signs.</p></div></div><div class="trust-row"><span class="warning-symbol">!</span><div><strong>Urgent payment demands</strong><small>Pause and verify independently.</small></div></div><div class="trust-row"><span class="warning-symbol">!</span><div><strong>OTP or PIN requests</strong><small>Never share secret codes.</small></div></div><div class="trust-row"><span class="warning-symbol">!</span><div><strong>Unexpected links</strong><small>Open official sites yourself.</small></div></div><div class="trust-foot"><span>ⓘ</span> AI checks can make mistakes. Verify important details.</div></div>
+        </aside>
+      </section>
+
+      <section class="results-section hidden" id="resultsSection" aria-live="polite">
+        <div class="results-title"><div><div class="eyebrow"><span class="sparkle">✳</span> YOUR MESSAGE, EXPLAINED</div><h2>Here’s what it means.</h2></div><div class="result-actions"><span class="result-mode" id="resultMode">DEMO MODE</span><button class="secondary-button" id="copyBtn">▢ Copy summary</button></div></div>
+        <div class="result-grid">
+          <article class="result-card meaning-card"><div class="result-card-head"><span class="result-icon mint">文</span><div><h3>Simple explanation</h3><p>The main idea, without the jargon</p></div></div><div class="result-body" id="meaningText"></div><div class="result-card-foot"><span class="mini-check">✓</span> Focus on the key message</div></article>
+          <article class="result-card translation-card"><div class="result-card-head"><span class="result-icon lavender">अ</span><div><h3 id="translationHeading">Hindi translation</h3><p>Understand it in your language</p></div><button class="round-button" id="speakBtn" aria-label="Read translation aloud" title="Read aloud">▶</button></div><div class="result-body hindi-text" id="translationText"></div><div class="result-card-foot"><span class="mini-check">♫</span> Tap play to listen</div></article>
+          <article class="result-card action-card"><div class="result-card-head"><span class="result-icon peach">↗</span><div><h3>What to do next</h3><p>Practical steps to consider</p></div></div><ol class="action-list" id="actionList"></ol></article>
+          <article class="result-card safety-card"><div class="result-card-head"><span class="result-icon yellow">◇</span><div><h3>Safety signals</h3><p>Things worth checking</p></div></div><div id="safetyContent"></div></article>
+        </div>
+        <div class="disclaimer"><span>ⓘ</span><p><strong>A helpful guide, not a final authority.</strong> Confirm financial, legal, health, or account-related messages through an official source. Never share OTPs, passwords, or PINs.</p></div>
+      </section>
+
+      <section class="how-section" id="how-it-works"><div class="section-heading"><div><div class="eyebrow">DESIGNED FOR EVERYONE</div><h2>Understanding should feel simple.</h2></div><p>Less confusion. More confidence.<br>One message at a time.</p></div><div class="steps-grid"><div class="step-card"><div class="step-icon step-one">01</div><h3>Paste your message</h3><p>Use an SMS, email, or message you want to understand.</p></div><div class="step-card"><div class="step-icon step-two">02</div><h3>Get a clear explanation</h3><p>See a simple summary and translation in your chosen language.</p></div><div class="step-card"><div class="step-icon step-three">03</div><h3>Choose your next step</h3><p>Review practical suggestions and check for warning signs.</p></div></div></section>
+      <footer class="footer"><a class="footer-brand" href="#">✳ message<span>saathi</span></a><span>Built for clearer, safer digital communication.</span><span>Open-source project · 2026</span></footer>
+    </main>
+  </div>
+
+  <dialog id="settingsDialog" class="settings-dialog"><form method="dialog"><div class="dialog-head"><div><div class="eyebrow">OPTIONAL AI CONNECTION</div><h2>Connect Gemma</h2></div><button class="icon-button" aria-label="Close settings">×</button></div><p class="dialog-copy">Enter a Google AI Studio API key to enable live model responses. The key is kept only in this browser tab and is not saved by this website. For a public deployment, use a server-side proxy instead of exposing a key.</p><label for="apiKeyInput">Google AI Studio API key</label><input type="password" id="apiKeyInput" placeholder="Paste API key for this session" autocomplete="off"><label for="modelInput">Model ID from AI Studio</label><input type="text" id="modelInput" value="gemma-3-27b-it" placeholder="Exact model ID available to your key"><p class="dialog-copy small-copy">The model ID above is a compatibility default, not a claim that Gemma 4 is available. Select the exact Gemma 4 model ID shown in your AI Studio account if available. Gemma model availability and API support can change.</p><div class="dialog-actions"><button class="secondary-button" value="cancel">Cancel</button><button class="primary-button" id="saveSettingsBtn" value="default">Use this key</button></div></form></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
